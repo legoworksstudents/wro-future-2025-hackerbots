@@ -19,6 +19,9 @@ Nuestro vehículo utiliza un diseño de tracción trasera con un motor brushless
 - Motor brushless para propulsión
 - Motor grande de LEGO Spike para controlar dirección
 - ESC del motor brushless
+- Baterías:
+  - 7,4V para raspberry
+  - 11,4V para motor propulsión
 
 ## Estructura del Repositorio
 - `/ros2/src/mi_paquete`: Paquete ROS2 principal
@@ -36,23 +39,17 @@ Nuestro vehículo utiliza una combinación de algoritmos para la navegación aut
 
 1. **Seguimiento de Pared**: Utilizamos un controlador PID para mantener una distancia constante respecto a las paredes del circuito.
 2. **Detección de Objetos**: La cámara detecta los pilares de colores (rojo y verde) y determina su posición relativa al centro de la camara en forma de porcentaje.
-3. **Toma de Decisiones**: Basado en la información de los sensores, el algoritmo decide la velocidad y dirección óptimas.
+3. **Toma de Decisiones**: Basado en la información de los sensores, el algoritmo decide la dirección para no chocarse o evitar obstaculos.
 
 ## Tecnologías Utilizadas
 - ROS2 (Robot Operating System 2)
 - Python
+- Ubuntu 
 - OpenCV para procesamiento de imágenes
 - Biblioteca BuildHat para control de motores
 - Controlador PID para estabilidad
 
 ## Instalación y Ejecución
-
-### Requisitos Previos
-- Ubuntu 20.04 o superior
-- ROS2 Foxy o superior
-- Python 3.8+
-- OpenCV 4.2+
-- Bibliotecas BuildHat
 
 ### Hardware y Software:
 
@@ -88,12 +85,13 @@ ros2 run mi_paquete camera.py
   - *Solución*: Dos sensores ultrasonicos que comprueban la distancia a la izquierda y derecha del robot. 
   
 - **Desafío 2**: Detectar y evitar pilares.
-  - *Solución*: Añadimos un parámetro a nuestro PID para que corrija en función de la distancia del bloque al centro de la imagen. 
+  - *Solución*: Añadimos un controlador extra y la corrección total es: Corrección PID de paredes + Corrección PID de posición bloques. 
 
 
 ## Licencia
-Este proyecto es libre.
+Este proyecto es open-source.
 
-## Agradecimientos
-- Agradecemos a nuestros mentores y patrocinadores por su apoyo.
-- Reconocimiento especial a [mencionar si aplica]. 
+## Integrantes del equipo:
+- María
+- Sofía
+- Fran
