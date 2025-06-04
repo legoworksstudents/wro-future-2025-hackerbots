@@ -16,6 +16,9 @@ Nuestro vehículo utiliza un diseño de tracción trasera con un motor brushless
 - Sensores:
   - Cámara USB para detección de objetos de colores
   - Sensores ultrasónicos para detección de distancia de LEGO
+- Motor brushless para propulsión
+- Motor grande de LEGO Spike para controlar dirección
+- ESC del motor brushless
 
 ## Estructura del Repositorio
 - `/ros2/src/mi_paquete`: Paquete ROS2 principal
